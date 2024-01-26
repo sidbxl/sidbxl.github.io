@@ -12,7 +12,11 @@ document.getElementById('drop_zone').addEventListener('drop', function(e) {
     var files = e.dataTransfer.files;
 
     for (var i = 0; i < files.length; i++) {
-        convertAndDownload(files[i], outputFormat);
+        if (files[i].type.startsWith('image/')) { // Check if the file is an image
+            convertAndDownload(files[i], outputFormat);
+        } else {
+            alert('Please drop an image file.');
+        }
     }
 });
 
