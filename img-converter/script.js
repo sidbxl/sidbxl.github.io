@@ -13,8 +13,9 @@ $(document).ready(function() {
         convertAndDownload(file, outputFormat);
     });
 
+    var alertBox = document.getElementById('alertbox');
+
     function convertAndDownload(file, outputFormat) {
-        console.log("convertAndDownload function is called");
         var reader = new FileReader();
         reader.onload = function(e) {
             var img = new Image();
@@ -34,5 +35,7 @@ $(document).ready(function() {
             img.src = e.target.result;
         };
         reader.readAsDataURL(file);
+        alertBox.classList.add('alert-success');
+        alertBox.innerHTML = '<p class="text-center">Fichier(s) converti(s) et téléchargé(s) !</p>';
     }
 });
