@@ -36,6 +36,7 @@ $(document).ready(function() {
         };
         reader.readAsDataURL(file);
         alertBox.classList.add('alert-success');
+        alertBox.classList.remove('alert-primary');
         alertBox.innerHTML = '<p class="text-center">Fichier(s) converti(s) et téléchargé(s) !</p>';
     }
 });
