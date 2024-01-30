@@ -1,0 +1,1 @@
+In browser image conversion with dropzone.js
