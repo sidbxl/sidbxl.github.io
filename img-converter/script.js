@@ -1,47 +1,38 @@
-document.getElementById('drop_zone').addEventListener('dragover', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    e.dataTransfer.dropEffect = 'copy';
-});
+Dropzone.autoDiscover = false;
+$(document).ready(function() {
+    // Turn the drop zone into a Dropzone
+    var myDropzone = new Dropzone('#drop_zone', {
+        url: function() {}, // Dummy function to prevent upload
+        acceptedFiles: 'image/*', // Only accept image files
+        autoProcessQueue: false, // Don't upload the files immediately
+    });
+    
+    // When a file is added, convert and download it
+    myDropzone.on('addedfile', function(file) {
+        var outputFormat = document.getElementById('output_format').value;
+        convertAndDownload(file, outputFormat);
+    });
 
-document.getElementById('drop_zone').addEventListener('drop', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    var outputFormat = document.getElementById('output_format').value;
-    var files = e.dataTransfer.files;
-
-    for (var i = 0; i < files.length; i++) {
-        if (files[i].type.startsWith('image/')) { // Check if the file is an image
-            convertAndDownload(files[i], outputFormat);
-        } else {
-            alert('Please drop an image file.');
-        }
-    }
-});
-
-function convertAndDownload(file, outputFormat) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-        var img = new Image();
-        img.onload = function() {
-            var canvas = document.createElement('canvas');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            var ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-            canvas.toBlob(function(blob) {
-                var link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = file.name + '.' + outputFormat;
-                link.click();
-            }, 'image/' + outputFormat);
+    function convertAndDownload(file, outputFormat) {
+        console.log("convertAndDownload function is called");
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var img = new Image();
+            img.onload = function() {
+                var canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                canvas.toBlob(function(blob) {
+                    var link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = file.name + '.' + outputFormat;
+                    link.click();
+                }, 'image/' + outputFormat);
+            };
+            img.src = e.target.result;
         };
-        img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-}
-
-document.getElementById('convert_button').addEventListener('click', function() {
-    alert('Please drop an image file into the drop zone.');
+        reader.readAsDataURL(file);
+    }
 });
