@@ -29,17 +29,22 @@ $(document).ready(function() {
         var projectUrls = $('#project-urls').val().split('\n');
 
         projectUrls.forEach(function(projectUrl) {
-            // Trim trailing slashes
             projectUrl = projectUrl.replace(/\/+$/, '');
             var projectName = projectUrl.split('/').slice(-2).join('/');
 
-            $.get('https://api.github.com/repos/' + projectName, function(data) {
-                projects.push(data);
-                saveProjects();
-                renderProjects();
+            $.get('https://api.github.com/repos/' + projectName, function(repoData) {
+                $.get('https://api.github.com/repos/' + projectName + '/releases', function(releasesData) {
+                    if (releasesData && releasesData.length > 0) {
+                        repoData.latest_release_date = releasesData[0].created_at; // Get the latest release date
+                    } else {
+                        repoData.latest_release_date = 'No releases'; // Handle repositories with no releases
+                    }
+                    projects.push(repoData);
+                    saveProjects();
+                    renderProjects();
+                });
             });
         });
-
         $('#project-urls').val('');
     });
 
@@ -65,7 +70,6 @@ $(document).ready(function() {
             }
         });
 
-        // Find the project with the most stars and the earliest last update date
         var mostStars = Math.max.apply(Math, projects.map(function(project) { return project.stargazers_count; }));
         var earliestUpdate = Math.min.apply(Math, projects.map(function(project) { return new Date(project.updated_at).getTime(); }));
         var mostForks = Math.max.apply(Math, projects.map(function(project) { return project.forks_count; }));
