@@ -6,8 +6,8 @@
 .project-card {
     border: 1px solid #ddd;
     box-sizing: border-box;
-    min-width: 16%;
-    max-width: 33%;
+    /* min-width: 16%; */
+    width: 205px;
     position: relative;
     margin-bottom: 10px;
 }

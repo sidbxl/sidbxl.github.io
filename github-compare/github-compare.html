@@ -12,14 +12,22 @@
 <body>
     <div class="container">
         <h1>GitHub Project Comparator</h1>
-        <input type="text" id="search-field" class="form-control" placeholder="Search GitHub projects">
-        <button type='button' class='btn btn-primary  mx-auto d-block' id="search-button">Search</button>
+        <div class="input-group mb-3">
+            <select class="form-select" id="search-type">
+                <option value="repository">Search Repositories</option>
+                <option value="username">User's Starred Projects</option>
+            </select>
+            <input type="text" id="search-field" class="form-control" placeholder="Search GitHub projects">
+            <button type='button' class='btn btn-primary' id="search-button">Search</button>
+        </div>
         <hr class="divide">
         <textarea id="project-urls" class="form-label form-control-lg form-control" placeholder="Enter GitHub Project URLs, one per line"></textarea>
         <button type='button' class='btn btn-primary mx-auto d-block' id="add-projects">Add Projects</button>
+        <button type='button' class='btn btn-danger' id="purge-button">Purge</button>
         <hr class="divide">
         <select id="sort-method" class="form-select form-select-lg">
-            <option value="updated_at">Most Recent Update</option>
+            <option value="latest_release_date">Latest Release</option>
+            <!-- <option value="updated_at">Most Recent Update</option> -->
             <option value="stargazers_count">Stars</option>
             <option value="forks_count">Forks</option>
         </select>
