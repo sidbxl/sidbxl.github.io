@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var githubToken = "";
+    var githubToken = "#";
 
     $('#search-button').click(function() {
         var searchType = $('#search-type').val();
