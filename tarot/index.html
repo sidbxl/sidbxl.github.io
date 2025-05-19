@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirage Tarot Cosmique V3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Suggestion de polices pour un style plus sobre -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tirage de Tarot Cosmique</h1>
+    <nav style="text-align: center; margin-bottom: 20px;">
+        <a href="gallery.html" class="nav-link">Voir la Galerie des Arcanes</a>
+    </nav>
+
+    <div class="input-section">
+        <label for="question">Votre question :</label>
+        <input type="text" id="question" placeholder="Quel mystère souhaitez-vous explorer ?">
+        <button id="draw-button">Tirer les cartes</button>
+    </div>
+
+    <div id="tarot-reading" class="tarot-reading hidden">
+        <!-- Zone Force -->
+        <div class="card-area">
+            <p class="card-label">Force</p>
+            <div class="card-display">
+                <img src="" alt="Carte Force" class="card-image" id="image-force">
+                <div class="card-info">
+                    <h2 class="card-name-cosmic" id="nameCosmic-force"></h2>
+                    <p class="card-number-roman" id="numberRoman-force"></p>
+                    <p class="card-name-marseille" id="nameMarseille-force"></p>
+                    <p class="card-description" id="description-force"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zone Principale -->
+        <div class="card-area main-card-area">
+            <p class="card-label">Carte Principale</p>
+             <div class="card-display">
+                <img src="" alt="Carte Principale" class="card-image" id="image-main">
+                <div class="card-info">
+                    <h2 class="card-name-cosmic" id="nameCosmic-main"></h2>
+                    <p class="card-number-roman" id="numberRoman-main"></p>
+                    <p class="card-name-marseille" id="nameMarseille-main"></p>
+                    <p class="card-description" id="description-main"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zone Faille -->
+        <div class="card-area">
+            <p class="card-label">Fragilité</p>
+             <div class="card-display">
+                <img src="" alt="Carte Faille" class="card-image" id="image-faille">
+                <div class="card-info">
+                    <h2 class="card-name-cosmic" id="nameCosmic-faille"></h2>
+                    <p class="card-number-roman" id="numberRoman-faille"></p>
+                    <p class="card-name-marseille" id="nameMarseille-faille"></p>
+                    <p class="card-description" id="description-faille"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-loading" class="hidden">
+        <p>Erreur : Impossible de charger les données des cartes. Veuillez vérifier le fichier cards_data.json et rafraîchir la page.</p>
+    </div>
+
+    <div id="loading-indicator" class="hidden">
+        <div class="spinner"></div>
+        Analyse cosmique en cours...
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

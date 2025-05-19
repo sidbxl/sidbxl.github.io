@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Tarot Cosmique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Galerie des Arcanes Cosmiques</h1>
+        <nav>
+            <a href="index.html" class="nav-link">Retour au Tirage</a>
+        </nav>
+    </header>
+
+    <main id="gallery-container" class="gallery-grid">
+        <!-- Les cartes seront injectées ici par JavaScript -->
+    </main>
+
+    <div id="card-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close-button">×</span>
+            <img src="" alt="Image de la carte en grand" id="modal-image" class="modal-card-image">
+            <div class="modal-card-info">
+                <h2 id="modal-nameCosmic" class="modal-card-name-cosmic"></h2>
+                <p id="modal-numberRoman" class="modal-card-number-roman"></p>
+                <p id="modal-nameMarseille" class="modal-card-name-marseille"></p>
+                <p id="modal-description" class="modal-card-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery-loading-indicator" class="loading-indicator-gallery">
+        <div class="spinner"></div>
+        Chargement de la galerie...
+    </div>
+    <div id="gallery-error-loading" class="hidden">
+        <p>Erreur : Impossible de charger les données des cartes. Veuillez vérifier le fichier cards_data.json et rafraîchir la page.</p>
+    </div>
+
+
+    <script src="gallery_script.js"></script>
+</body>
+</html>
