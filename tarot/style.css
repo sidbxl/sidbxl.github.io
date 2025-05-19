@@ -551,3 +551,19 @@ h1 {
     .modal-card-name-marseille { font-size: 0.9em; }
     .modal-card-description { font-size: 0.9em; }
 }
+
+
+/* --- Footer Styles --- */
+.page-footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Espace au-dessus du footer */
+    border-top: 1px solid rgba(var(--accent-color), 0.2); /* Ligne de séparation subtile */
+    font-size: 0.85em;
+    color: rgba(var(--text-color), 0.7); /* Texte légèrement moins visible */
+}
+
+.page-footer p {
+    margin: 0;
+}
