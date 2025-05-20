@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tarot-cosmique-cache-v2';
+const CACHE_NAME = 'tarot-cosmique-cache-v3';
 const urlsToCache = [
     'index.html',
     'gallery.html',
