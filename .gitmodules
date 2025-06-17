@@ -1,0 +1,3 @@
+[submodule "courses/cheatsheets"]
+	path = courses/cheatsheets
+	url = https://github.com/sidbxl/cheatsheets
