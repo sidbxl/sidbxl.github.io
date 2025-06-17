@@ -3,11 +3,54 @@ a.badge {
 }
 a.badge:hover {
     text-decoration: underline;
-    color: black;
+    background: #cc168d !important;
     transition: all 0.6s ease-in-out;
 }
 
 button a {
     color: white;
     text-decoration: none;
+}
+
+hr.divide {
+    border-top: 2px dashed #cc168d;
+}
+
+h1 {
+    color: #00acd5;
+    font-weight: 900;
+}
+
+h2 {
+    color: #00acd5;
+    font-weight: 700;
+}
+
+h3  {
+    color: #cc168d;
+    font-weight: 600;
+}
+
+.btn-success {
+    background-color: #cc168d;
+    border-color: #cc168d;
+}
+
+.btn-success:hover {
+    background-color: #8a0c5f;
+    border-color: #8a0c5f;
+    transition: all 0.6s ease-in-out;
+}
+
+h3 a {
+    color: #cc168d;
+}
+
+h3 a:hover {
+    color: #8a0c5f;
+    transition: all 0.6s ease-in-out;
+}
+
+a.badge {
+    font-weight: 500;
 }
