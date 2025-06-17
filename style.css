@@ -6,3 +6,8 @@ a.badge:hover {
     color: black;
     transition: all 0.6s ease-in-out;
 }
+
+button a {
+    color: white;
+    text-decoration: none;
+}
