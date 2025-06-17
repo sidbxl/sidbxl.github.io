@@ -1,0 +1,8 @@
+a.badge {
+    text-decoration: none;
+}
+a.badge:hover {
+    text-decoration: underline;
+    color: black;
+    transition: all 0.6s ease-in-out;
+}
