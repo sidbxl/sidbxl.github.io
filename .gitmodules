@@ -1,3 +1,6 @@
 [submodule "courses/cheatsheets"]
 	path = courses/cheatsheets
 	url = https://github.com/sidbxl/cheatsheets
+[submodule "tarot"]
+	path = tarot
+	url = https://github.com/sidbxl/Cosmic-Tarot.git
