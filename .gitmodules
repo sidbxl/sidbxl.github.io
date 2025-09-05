@@ -4,3 +4,6 @@
 [submodule "tarot"]
 	path = tarot
 	url = https://github.com/sidbxl/Cosmic-Tarot.git
+[submodule "neon-arcade"]
+	path = neon-arcade
+	url = https://github.com/sidbxl/neon-arcade.git
