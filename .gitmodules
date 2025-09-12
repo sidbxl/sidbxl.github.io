@@ -7,6 +7,3 @@
 [submodule "neon-arcade"]
 	path = neon-arcade
 	url = https://github.com/sidbxl/neon-arcade.git
-[submodule "portfoliotest"]
-	path = portfoliotest
-	url = https://github.com/sidbxl/portfoliotest.git
